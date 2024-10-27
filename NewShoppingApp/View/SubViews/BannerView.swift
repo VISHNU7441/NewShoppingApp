@@ -33,12 +33,12 @@ struct BannerView: View {
                                     .cornerRadius(10)
                             }
                         }
-                        .position(x: 120, y: 120)
+                        .position(x: 120, y: 105)
                     }
             }
         
         }
-        .frame(height: 250)
+        .frame(height: 200)
         .tabViewStyle(.page(indexDisplayMode:.automatic))
     }
 }

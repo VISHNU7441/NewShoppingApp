@@ -25,7 +25,7 @@ struct HomeView: View {
                         .fill(.gray.opacity(0.2))
                         
                 }
-                .padding()
+                .padding(.horizontal, 10)
                 
                 // BannerView()
                 BannerView()
