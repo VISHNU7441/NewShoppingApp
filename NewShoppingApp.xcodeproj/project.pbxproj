@@ -76,7 +76,6 @@
 				F397499D2CC1751700FFB0DC /* ViewModel */,
 				F397499E2CC1752400FFB0DC /* View */,
 				F39749AA2CC176B500FFB0DC /* Others */,
-				F39749922CC174E800FFB0DC /* Assets.xcassets */,
 				F39749942CC174E800FFB0DC /* Preview Content */,
 			);
 			path = NewShoppingApp;
@@ -85,6 +84,7 @@
 		F39749942CC174E800FFB0DC /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				F39749922CC174E800FFB0DC /* Assets.xcassets */,
 				F39749952CC174E800FFB0DC /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";

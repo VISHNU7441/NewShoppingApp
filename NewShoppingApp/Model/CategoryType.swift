@@ -9,7 +9,7 @@ import Foundation
 
 
 enum Category:String, CaseIterable{
-    case all
+    case all = "all category"
     case electronics = "electronics"
     case jewellery = "jewelery"
     case mensClothing = "men's clothing"

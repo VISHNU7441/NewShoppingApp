@@ -29,8 +29,13 @@ struct HomeView: View {
                 
                 // BannerView()
                 BannerView()
+                    .padding(.bottom, 10)
+                
+            
+                CategoryView()
                 
                 Spacer()
+                
                 
             }
             .toolbar{
