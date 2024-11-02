@@ -11,11 +11,14 @@ import Foundation
 class ShoppingAppViewModel: ObservableObject{
     
     private var allProducts:[Product] = []
-    
     @Published var listOfProducts:[Product] = []
+    @Published var listOfSearchProducts:[Product] = []
     
     
-   // MARK:- function to fetchData from DataBase
+    @Published var searchTerm:String = ""
+    private var searchTask:Task<Void, Error>?
+    
+    // MARK: - function to fetchData from DataBase
     
     func fetchData() async {
         
@@ -31,6 +34,8 @@ class ShoppingAppViewModel: ObservableObject{
             
             let products = try JSONDecoder().decode([Product].self, from: data)
             
+         //   downloadJSONToOffline(data: data, fileName: "fakeProducts")
+            
             await MainActor.run {
                 self.allProducts = products
                 self.listOfProducts = allProducts
@@ -39,6 +44,7 @@ class ShoppingAppViewModel: ObservableObject{
             
         }
         catch {
+            
             if let urlError = error as? URLError{
                 print("error: \(urlError.rawValue)")
             }else{
@@ -47,7 +53,7 @@ class ShoppingAppViewModel: ObservableObject{
         }
     }
     
-    // MARK:- Update listOfProducts based on Category
+    // MARK: Update listOfProducts based on Category
     
     func setListOfProducts(category:Category){
         
@@ -61,10 +67,42 @@ class ShoppingAppViewModel: ObservableObject{
         
     }
     
+    // MARK: Search function 
+    
+    func searchFilter(){
+        
+        let productsHasPrefix = allProducts.filter {
+            $0.title.lowercased().hasPrefix(searchTerm.lowercased())
+        }
+        
+        let productsThatHasOtherMatches = allProducts.filter{
+            !$0.title.lowercased().hasPrefix(searchTerm.lowercased()) && $0.title.lowercased().contains(searchTerm.lowercased())
+        }
+        
+        listOfSearchProducts = productsHasPrefix + productsThatHasOtherMatches
+        
+    }
+    
+    
+    // MARK: Debounce function for calling search filter
+    
+    func debounce(){
+        searchTask?.cancel()
+        
+        searchTask = Task{
+            
+            try? await Task.sleep(nanoseconds: 500_000_000)
+            
+            if !Task.isCancelled{
+                // call the actual search filter function
+                searchFilter()
+            }
+        }
+        
+    }
+    
+    
+    
 }
-
-
-
-
 
 

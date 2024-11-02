@@ -16,8 +16,13 @@ enum Category:String, CaseIterable{
     case womensClothing = "women's clothing"
 }
 
-
-
+// For building CategoryView()
+struct CategoryItem:Identifiable{
+    let id = UUID()
+    let title:String
+    let image:String
+    let categoryType:Category
+}
 
 
 
