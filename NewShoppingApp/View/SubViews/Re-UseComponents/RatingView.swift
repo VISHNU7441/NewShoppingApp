@@ -10,7 +10,7 @@ import SwiftUI
 
 func ratingView(_ value:Double) -> some View{
     Label(String(format: "%.1f", value), systemImage: "star.fill")
-        .padding(5)
+        .padding(2)
         .padding(.trailing, 5)
         .background(.orange)
         .clipShape(Capsule())
