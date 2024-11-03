@@ -8,7 +8,7 @@
 import Foundation
 
 
-class ShoppingAppViewModel: ObservableObject{
+class HomeViewModel: ObservableObject{
     
     private var allProducts:[Product] = []
     @Published var listOfProducts:[Product] = []

@@ -17,7 +17,7 @@ struct CategoryView: View {
     CategoryItem(title: "Women's clothing", image: "women's clothing", categoryType: .womensClothing)
     ]
     
-    @ObservedObject var viewMode:ShoppingAppViewModel
+    @ObservedObject var viewMode:HomeViewModel
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false){
             HStack(spacing: 20){
@@ -49,5 +49,5 @@ struct CategoryView: View {
     }
 
 #Preview {
-    CategoryView(viewMode: ShoppingAppViewModel())
+    CategoryView(viewMode: HomeViewModel())
 }

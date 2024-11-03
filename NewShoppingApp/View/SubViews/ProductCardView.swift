@@ -16,14 +16,18 @@ struct ProductCardView: View {
             AsyncImage(url: URL(string: product.image)){ result in
                 switch result {
                 case .empty:
-                    ProgressView()
+                    RoundedRectangle(cornerRadius: 20)
+                         .fill(.gray.opacity(0.4))
+                         .frame(width: 150, height: 150)
                 case .success(let image):
                     image
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 150, height: 150)
                 case .failure(_):
-                    ProgressView()
+                    RoundedRectangle(cornerRadius: 20)
+                         .fill(.gray.opacity(0.4))
+                         .frame(width: 150, height: 150)
                 @unknown default:
                     fatalError()
                 }
@@ -31,17 +35,18 @@ struct ProductCardView: View {
             }
             .position(x: 80, y: 90)
             
+            // product content
+            
             VStack{
                 Spacer().frame(height: 160)
                 Text(product.title)
-                    .font(.headline)
+                    .font(.subheadline)
                     .padding(.bottom, 8)
                 
                 HStack(spacing: 20){
                     Text("$" + String(format: "%.2f", product.price))
-                        .font(.system(size: 20, weight: .bold))
+                        .font(.system(size: 16, weight: .bold))
                         
-                    
                     ratingView(product.rating.rate)
                     
                 }
@@ -49,11 +54,11 @@ struct ProductCardView: View {
             }
                 
         }
-        .frame(width: 170, height: 300)
+        .frame(width: 150, height: 250)
         .padding()
         .background(Color.white)
         .clipShape(RoundedRectangle(cornerRadius: 15))
-        .shadow(color: .gray.opacity(0.6), radius: 10)
+        .shadow(color: .gray.opacity(0.3), radius: 5)
         .overlay(alignment:.topTrailing) {
             Image(systemName: "heart.fill")
                 .foregroundStyle(isFavourite ? .red : .white)

@@ -13,7 +13,7 @@ struct BannerView: View {
             ForEach(1..<5){ index in
                 RoundedRectangle(cornerRadius: 15)
                     .fill(.blue)
-                    .padding(.horizontal)
+                    .padding(.horizontal,8)
                     .overlay{
                         VStack(alignment: .leading) {
                             Text("Super Sale Discount")

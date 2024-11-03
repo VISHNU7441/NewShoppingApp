@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F369F0522CD4C2D500DF51DE /* DownloadJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = F369F0512CD4C2D500DF51DE /* DownloadJSON.swift */; };
 		F397498F2CC174E700FFB0DC /* NewShoppingAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F397498E2CC174E700FFB0DC /* NewShoppingAppApp.swift */; };
 		F39749912CC174E700FFB0DC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39749902CC174E700FFB0DC /* ContentView.swift */; };
 		F39749932CC174E800FFB0DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F39749922CC174E800FFB0DC /* Assets.xcassets */; };
@@ -20,10 +21,12 @@
 		F39749AF2CC1797500FFB0DC /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39749AE2CC1797500FFB0DC /* Product.swift */; };
 		F3B4A8612CC4CF800001786C /* NetworkErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B4A8602CC4CF800001786C /* NetworkErrorType.swift */; };
 		F3B4A8632CC4D0F70001786C /* CategoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B4A8622CC4D0F70001786C /* CategoryType.swift */; };
-		F3BA9D702CC42AF300CDC943 /* ShoppingAppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BA9D6F2CC42AF300CDC943 /* ShoppingAppViewModel.swift */; };
+		F3BA9D702CC42AF300CDC943 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BA9D6F2CC42AF300CDC943 /* HomeViewModel.swift */; };
+		F3E8F24A2CD6BA0C004C9BD5 /* ProductDetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E8F2492CD6BA0B004C9BD5 /* ProductDetailedView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F369F0512CD4C2D500DF51DE /* DownloadJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadJSON.swift; sourceTree = "<group>"; };
 		F397498B2CC174E700FFB0DC /* NewShoppingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewShoppingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F397498E2CC174E700FFB0DC /* NewShoppingAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewShoppingAppApp.swift; sourceTree = "<group>"; };
 		F39749902CC174E700FFB0DC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -38,7 +41,8 @@
 		F39749AE2CC1797500FFB0DC /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		F3B4A8602CC4CF800001786C /* NetworkErrorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorType.swift; sourceTree = "<group>"; };
 		F3B4A8622CC4D0F70001786C /* CategoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryType.swift; sourceTree = "<group>"; };
-		F3BA9D6F2CC42AF300CDC943 /* ShoppingAppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingAppViewModel.swift; sourceTree = "<group>"; };
+		F3BA9D6F2CC42AF300CDC943 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		F3E8F2492CD6BA0B004C9BD5 /* ProductDetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +56,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F369F0502CD4C22200DF51DE /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				F369F0512CD4C2D500DF51DE /* DownloadJSON.swift */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
 		F39749822CC174E700FFB0DC = {
 			isa = PBXGroup;
 			children = (
@@ -71,11 +83,10 @@
 		F397498D2CC174E700FFB0DC /* NewShoppingApp */ = {
 			isa = PBXGroup;
 			children = (
-				F397498E2CC174E700FFB0DC /* NewShoppingAppApp.swift */,
 				F397499C2CC1750B00FFB0DC /* Model */,
 				F397499D2CC1751700FFB0DC /* ViewModel */,
 				F397499E2CC1752400FFB0DC /* View */,
-				F39749AA2CC176B500FFB0DC /* Others */,
+				F369F0502CD4C22200DF51DE /* Others */,
 				F39749942CC174E800FFB0DC /* Preview Content */,
 			);
 			path = NewShoppingApp;
@@ -103,7 +114,7 @@
 		F397499D2CC1751700FFB0DC /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				F3BA9D6F2CC42AF300CDC943 /* ShoppingAppViewModel.swift */,
+				F3BA9D6F2CC42AF300CDC943 /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -111,8 +122,10 @@
 		F397499E2CC1752400FFB0DC /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F397499F2CC1758500FFB0DC /* HomeView.swift */,
+				F397498E2CC174E700FFB0DC /* NewShoppingAppApp.swift */,
 				F39749902CC174E700FFB0DC /* ContentView.swift */,
+				F397499F2CC1758500FFB0DC /* HomeView.swift */,
+				F3E8F2492CD6BA0B004C9BD5 /* ProductDetailedView.swift */,
 				F39749A12CC175C600FFB0DC /* CartView.swift */,
 				F39749A32CC175E800FFB0DC /* SubViews */,
 			);
@@ -128,13 +141,6 @@
 				F39749AB2CC177FC00FFB0DC /* Re-UseComponents */,
 			);
 			path = SubViews;
-			sourceTree = "<group>";
-		};
-		F39749AA2CC176B500FFB0DC /* Others */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Others;
 			sourceTree = "<group>";
 		};
 		F39749AB2CC177FC00FFB0DC /* Re-UseComponents */ = {
@@ -217,15 +223,17 @@
 			files = (
 				F39749A92CC1767700FFB0DC /* BannerView.swift in Sources */,
 				F39749A72CC1762F00FFB0DC /* CategoryView.swift in Sources */,
+				F3E8F24A2CD6BA0C004C9BD5 /* ProductDetailedView.swift in Sources */,
 				F39749AF2CC1797500FFB0DC /* Product.swift in Sources */,
 				F39749A02CC1758500FFB0DC /* HomeView.swift in Sources */,
+				F369F0522CD4C2D500DF51DE /* DownloadJSON.swift in Sources */,
 				F39749AD2CC178CB00FFB0DC /* RatingView.swift in Sources */,
 				F3B4A8632CC4D0F70001786C /* CategoryType.swift in Sources */,
 				F39749912CC174E700FFB0DC /* ContentView.swift in Sources */,
 				F3B4A8612CC4CF800001786C /* NetworkErrorType.swift in Sources */,
 				F39749A22CC175C600FFB0DC /* CartView.swift in Sources */,
 				F397498F2CC174E700FFB0DC /* NewShoppingAppApp.swift in Sources */,
-				F3BA9D702CC42AF300CDC943 /* ShoppingAppViewModel.swift in Sources */,
+				F3BA9D702CC42AF300CDC943 /* HomeViewModel.swift in Sources */,
 				F39749A52CC1760500FFB0DC /* ProductCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
