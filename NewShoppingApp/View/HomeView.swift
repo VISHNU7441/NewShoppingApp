@@ -47,7 +47,7 @@ struct HomeView: View {
                         GeometryReader{ geo in
                             let yOffset = geo.frame(in: .global).minY
                             VStack{
-                                CategoryView(viewMode: viewModel)
+                                CategoryView(viewModel: viewModel)
                                 
                                 HStack{
                                     Text("Special For You")
@@ -74,11 +74,18 @@ struct HomeView: View {
                     // Product List view
                         
                         LazyVGrid(columns:[GridItem(spacing:0), GridItem()]){
-                            ForEach(1..<50){ product in
-                                ProductCardView(product: Product.sampleProduct)
+                            ForEach(viewModel.listOfProducts){ product in
+                                NavigationLink(value: product) {
+                                    ProductCardView(product: product)
+                                }
+                                .buttonStyle(PlainButtonStyle())
+                               
                             }
                         }
                         .padding(.horizontal, 5)
+                        .navigationDestination(for: Product.self) { product in
+                            ProductDetailedView(product: product)
+                        }
                         
                     }
                 }
@@ -104,6 +111,9 @@ struct HomeView: View {
             }
             
             
+        }
+        .task {
+           await viewModel.fetchData()
         }
     }
 }

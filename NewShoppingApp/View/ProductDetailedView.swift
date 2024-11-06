@@ -11,7 +11,7 @@ struct ProductDetailedView: View {
     let product:Product
     var body: some View {
         ZStack{
-            Color.gray.opacity(0.3).ignoresSafeArea()
+            Color.white.opacity(0.3).ignoresSafeArea()
             
             VStack{
                 TabView {
@@ -25,6 +25,8 @@ struct ProductDetailedView: View {
                             case .success(let image):
                                 image
                                     .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 300, height: 300, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                             case .failure(_):
                                 RoundedRectangle(cornerRadius: 20)
                                     .frame(width: 100, height: 100)
@@ -41,7 +43,7 @@ struct ProductDetailedView: View {
                 Spacer()
                 
                 UnevenRoundedRectangle(topLeadingRadius: 30, topTrailingRadius: 30, style: .continuous)
-                    .fill(.white)
+                    .fill(.gray.opacity(0.1))
                     .ignoresSafeArea()
                     .overlay {
                         // Build as sub view()
