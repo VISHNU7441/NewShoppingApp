@@ -17,13 +17,13 @@ struct CategoryView: View {
     CategoryItem(title: "Women's clothing", image: "women's clothing", categoryType: .womensClothing)
     ]
     
-    @ObservedObject var viewMode:HomeViewModel
+    @ObservedObject var viewModel:HomeViewModel
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false){
             HStack(spacing: 20){
                     ForEach(listOfCategory){ item in
                         Button{
-                            viewMode.setListOfProducts(category: item.categoryType)
+                            viewModel.setListOfProducts(category: item.categoryType)
                         } label: {
                             VStack{
                                 Image("Category/\(item.image)")
@@ -49,5 +49,5 @@ struct CategoryView: View {
     }
 
 #Preview {
-    CategoryView(viewMode: HomeViewModel())
+   CategoryView(viewModel: HomeViewModel())
 }
