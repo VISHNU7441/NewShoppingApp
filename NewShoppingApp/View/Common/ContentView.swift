@@ -8,14 +8,27 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject private var manager = CartManager.shared
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        TabView{
+            HomeView()
+                .tabItem {
+                    Label("home", systemImage: "house")
+                }
+            
+            WishList()
+                .tabItem {
+                    Label("Fav", systemImage: "heart")
+                }
+            
+            CartView()
+                .tabItem {
+                    Label("Cart", systemImage: "cart")
+                      
+                }
+                .badge(manager.cartItems.count)
+            
         }
-        .padding()
     }
 }
 
