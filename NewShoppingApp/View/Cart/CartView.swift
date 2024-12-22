@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct CartView: View {
+    @Binding var selectedTab:Int
+    @Binding var previousTab:Int
     @StateObject var vm = CartViewModel()
     var body: some View {
         NavigationStack{
@@ -40,7 +42,7 @@ struct CartView: View {
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button {
-                        
+                        selectedTab = previousTab
                     } label: {
                         Image(systemName: "house")
                             .tint(.black)
@@ -54,12 +56,11 @@ struct CartView: View {
                     
                 }
             }
+            .toolbar(.hidden, for: .tabBar)
         }
     }
-    
-    
-    
-    private var overlayContent:some View{
+ 
+    var overlayContent:some View{
         VStack(spacing: 20){
             HStack{
                 Text("Subtotal")
@@ -89,5 +90,9 @@ struct CartView: View {
 }
 
 #Preview {
-    CartView()
+   // CartView(selectedTab: $se)
+}
+
+#Preview {
+    ContentView()
 }
