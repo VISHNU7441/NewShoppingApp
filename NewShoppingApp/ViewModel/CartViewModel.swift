@@ -12,7 +12,7 @@ class CartViewModel:ObservableObject{
     @Published var cartList:[CartItem] = []
     @Published var cartTotalPrice:Double = 0
     
-    private var cancellables: Set<AnyCancellable> = []
+    private var cancellable: Set<AnyCancellable> = []
     let manager = CartManager.shared
     
     init(){
@@ -26,7 +26,7 @@ class CartViewModel:ObservableObject{
                 self?.cartList = itemsList
                 self?.cartTotalPrice = itemsList.reduce(0){ $0 + $1.totalPrice}
             }
-            .store(in: &cancellables)
+            .store(in: &cancellable)
     }
     
     func removeProductFromCart(product:Product){
@@ -35,6 +35,10 @@ class CartViewModel:ObservableObject{
     
     func incrementTheProductQuantity(product:Product){
         manager.incrementQuantity(product: product)
+    }
+    
+    func decrementTheProductQuantity(product:Product){
+        manager.decrementQuantity(product: product)
     }
 
 }

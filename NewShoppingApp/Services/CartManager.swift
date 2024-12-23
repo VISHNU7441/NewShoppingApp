@@ -35,4 +35,12 @@ class CartManager:ObservableObject{
             cartItems[index].quantity += 1
         }
     }
+    
+    func decrementQuantity(product:Product){
+        if let index = cartItems.firstIndex(where: { $0.id == product.id}){
+            if cartItems[index].quantity > 1{
+                cartItems[index].quantity -= 1
+            }
+        }
+    }
 }

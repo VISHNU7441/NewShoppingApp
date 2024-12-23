@@ -72,7 +72,7 @@ struct CartProductView: View {
                     }
                     
                     Button {
-                        
+                        viewModel.decrementTheProductQuantity(product: product)
                     } label: {
                         Image(systemName: "minus")
                     }
