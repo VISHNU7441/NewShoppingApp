@@ -18,6 +18,7 @@ class HomeViewModel: ObservableObject{
     @Published var searchTerm:String = ""
     private var searchTask:Task<Void, Error>?
     
+    let manager = CartManager.shared
     // MARK: - function to fetchData from DataBase
     
     func fetchData() async {
@@ -101,7 +102,9 @@ class HomeViewModel: ObservableObject{
         
     }
     
-    
+    func addProductToCart(product:Product){
+        manager.addToCart(product: product)
+    }
     
 }
 

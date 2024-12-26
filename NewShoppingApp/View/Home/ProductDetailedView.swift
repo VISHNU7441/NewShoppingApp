@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ProductDetailedView: View {
     let product:Product
+    @ObservedObject var homeViewModel:HomeViewModel
+    @Environment(\.dismiss) var dismiss
     var body: some View {
         ZStack{
             Color.white.opacity(0.3).ignoresSafeArea()
@@ -77,7 +79,8 @@ struct ProductDetailedView: View {
                         .padding()
                         .overlay(alignment:.bottom){
                             Button{
-                                
+                                homeViewModel.addProductToCart(product: product)
+                                dismiss()
                             }label:{
                                 Text("Add to Cart")
                                     .font(.title2)
@@ -102,5 +105,5 @@ struct ProductDetailedView: View {
 }
 
 #Preview {
-    ProductDetailedView(product: Product.sampleProduct)
+    ProductDetailedView(product: Product.sampleProduct, homeViewModel: HomeViewModel())
 }

@@ -84,7 +84,7 @@ struct HomeView: View {
                         }
                         .padding(.horizontal, 5)
                         .navigationDestination(for: Product.self) { product in
-                            ProductDetailedView(product: product)
+                            ProductDetailedView(product: product, homeViewModel: viewModel)
                         }
                         
                     }
