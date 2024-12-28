@@ -19,6 +19,8 @@ class HomeViewModel: ObservableObject{
     private var searchTask:Task<Void, Error>?
     
     let manager = CartManager.shared
+    let wishListManager = WishListManager.shared
+    
     // MARK: - function to fetchData from DataBase
     
     func fetchData() async {
@@ -106,6 +108,15 @@ class HomeViewModel: ObservableObject{
         manager.addToCart(product: product)
     }
     
+    // functions related to manage wishList
+    
+    func addProductToWishList(product:Product){
+        wishListManager.addToWishList(product: product)
+    }
+    
+    func deleteProductFromWishList(product:Product){
+        wishListManager.removeProductFromWishList(product: product)
+    }
 }
 
 

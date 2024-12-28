@@ -15,6 +15,7 @@
 		F3B4A8612CC4CF800001786C /* NetworkErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B4A8602CC4CF800001786C /* NetworkErrorType.swift */; };
 		F3B4A8632CC4D0F70001786C /* CategoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B4A8622CC4D0F70001786C /* CategoryType.swift */; };
 		F3BA9D702CC42AF300CDC943 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BA9D6F2CC42AF300CDC943 /* HomeViewModel.swift */; };
+		F3FB55012D20909F00071384 /* WishListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FB55002D20909F00071384 /* WishListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		F3B4A8602CC4CF800001786C /* NetworkErrorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorType.swift; sourceTree = "<group>"; };
 		F3B4A8622CC4D0F70001786C /* CategoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryType.swift; sourceTree = "<group>"; };
 		F3BA9D6F2CC42AF300CDC943 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		F3FB55002D20909F00071384 /* WishListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -101,6 +103,7 @@
 			children = (
 				F3BA9D6F2CC42AF300CDC943 /* HomeViewModel.swift */,
 				F38882422CFD894100992B95 /* CartViewModel.swift */,
+				F3FB55002D20909F00071384 /* WishListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 			files = (
 				F39749AF2CC1797500FFB0DC /* Product.swift in Sources */,
 				F38882432CFD894100992B95 /* CartViewModel.swift in Sources */,
+				F3FB55012D20909F00071384 /* WishListViewModel.swift in Sources */,
 				F37B8D632CFA506100181608 /* CartItem.swift in Sources */,
 				F3B4A8632CC4D0F70001786C /* CategoryType.swift in Sources */,
 				F3B4A8612CC4CF800001786C /* NetworkErrorType.swift in Sources */,

@@ -76,7 +76,7 @@ struct HomeView: View {
                         LazyVGrid(columns:[GridItem(spacing:0), GridItem()]){
                             ForEach(viewModel.listOfProducts){ product in
                                 NavigationLink(value: product) {
-                                    ProductCardView(product: product)
+                                    ProductCardView(homeViewModel: viewModel, product: product)
                                 }
                                 .buttonStyle(PlainButtonStyle())
                                

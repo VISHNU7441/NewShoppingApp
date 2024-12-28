@@ -8,8 +8,19 @@
 import SwiftUI
 
 struct WishList: View {
+    @StateObject var viewModel = wishListViewModel()
     var body: some View {
-        Text("This is the WishList view()")
+        NavigationStack{
+            ScrollView{
+                VStack(spacing:15){
+                    ForEach(viewModel.wishList){ item in
+                        WishProductView(product: item)
+                        Divider()
+                    }
+                }
+                .padding()
+            }
+        }
     }
 }
 

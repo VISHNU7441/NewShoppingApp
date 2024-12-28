@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ProductCardView: View {
+    @ObservedObject var homeViewModel:HomeViewModel
     @State var isFavourite:Bool = false
     var product:Product
     var body: some View {
@@ -68,12 +69,22 @@ struct ProductCardView: View {
                     UnevenRoundedRectangle(cornerRadii: RectangleCornerRadii( bottomLeading: 15,topTrailing: 15)))  // unevenRoundedRectangle
                 .onTapGesture {
                     isFavourite.toggle()
+                    
                 }
+                
+        }
+        .onChange(of: isFavourite) {
+            if isFavourite{
+                homeViewModel.addProductToWishList(product: product)
+            }
+            else{
+                homeViewModel.deleteProductFromWishList(product: product)
+            }
         }
     }
 }
 
 
 #Preview {
-    ProductCardView(product: Product.sampleProduct)
+    ProductCardView(homeViewModel: HomeViewModel(), product: Product.sampleProduct)
 }
