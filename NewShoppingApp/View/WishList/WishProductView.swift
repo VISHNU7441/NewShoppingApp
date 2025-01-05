@@ -11,26 +11,11 @@ struct WishProductView: View {
     let product:Product
     var body: some View {
         HStack{
-            AsyncImage(url: URL(string: product.image)){ result in
-                switch result {
-                case .empty:
-                    RoundedRectangle(cornerRadius: 20)
-                         .fill(.gray.opacity(0.4))
-                         .frame(width: 150, height: 150)
-                case .success(let image):
-                    image
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 150, height: 150)
-                case .failure(_):
-                    RoundedRectangle(cornerRadius: 20)
-                         .fill(.gray.opacity(0.4))
-                         .frame(width: 150, height: 150)
-                @unknown default:
-                    fatalError()
-                }
-                
-            }
+            CustomAsyncImage(url: URL(string: product.image)!,
+                             placeholder: {AnyView(ProgressView())},
+                             errorView: {AnyView(Rectangle())})
+            .frame(width: 100, height: 100)
+            .frame(maxWidth: 150)
             
             VStack(alignment:.leading, spacing: 10){
                 Text(product.title)
