@@ -50,6 +50,15 @@ open NewShoppingApp.xcodeproj
 </table>
 
 #### Project Details
+* App Name: Shopping App
+* Version: 1.0.0
+* Author: Vishnu R S
 
 
 #### Contributing
+Contributions are welcome! Please open an issue or submit a pull request if you have ideas for improvements.
+#### Contact
+* Email: vishnurs74417441@gmail.com
+* LinkedIn: [linkedin.com/in/vishnurs7441](https://www.linkedin.com/in/vishnurs7441)
+* GitHub: [github.com/vishnu7441](https://www.github.com/vishnu7441)
+
