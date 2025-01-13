@@ -31,3 +31,9 @@ cd NewShoppingApp
 open NewShoppingApp.xcodeproj
 ```
 3. Build and run the app on a simulator or connected device.
+#### Screenshots
+
+#### Project Details
+
+
+#### Contributing
