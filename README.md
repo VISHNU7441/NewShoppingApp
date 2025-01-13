@@ -23,11 +23,11 @@ This iOS shopping app is designed to provide a seamless and intuitive shopping e
 #### Installation
 1. Clone the repository:
 ```console
-git clone https://github.com/yourusername/shopping-app.git
+git clone https://github.com/VISHNU7441/NewShoppingApp.git
 ```
 2. Open the project in Xcode:
 ```console
-cd shopping-app
-open ShoppingApp.xcodeproj
+cd NewShoppingApp
+open NewShoppingApp.xcodeproj
 ```
 3. Build and run the app on a simulator or connected device.
