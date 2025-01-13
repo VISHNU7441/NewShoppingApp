@@ -17,3 +17,17 @@ This iOS shopping app is designed to provide a seamless and intuitive shopping e
 * Design Patterns: MVVM (Model-View-ViewModel)
 * API Integration: RESTful APIs with async/await for seamless data fetching
 * Development Tools: Xcode, Git, GitHub
+### Getting Started
+#### Prerequisites
+* macOS with Xcode installed (Xcode version 12 or later recommended).
+#### Installation
+1. Clone the repository:
+```console
+git clone https://github.com/yourusername/shopping-app.git
+```
+2. Open the project in Xcode:
+```console
+cd shopping-app
+open ShoppingApp.xcodeproj
+```
+3. Build and run the app on a simulator or connected device.
