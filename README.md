@@ -32,6 +32,18 @@ open NewShoppingApp.xcodeproj
 ```
 3. Build and run the app on a simulator or connected device.
 #### Screenshots
+<table>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/a5b5bb3b-bce3-48b3-b7dc-84d25a94ee73" width="200" height="280"> 
+      <br><em>Cart View</em>
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/a5b5bb3b-bce3-48b3-b7dc-84d25a94ee73" width="200" height="280"> 
+      <br><em>Wishlist View</em>
+    </td>
+  </tr>
+</table>
 
 #### Project Details
 
