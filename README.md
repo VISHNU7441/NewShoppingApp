@@ -3,7 +3,7 @@
 
 
 ## Description
-This iOS shopping app is designed to provide a seamless and intuitive shopping experience. Built with Swift, SwiftUI, and Combine, the app allows users to browse products, add items to wishlists and carts, and complete purchases efficiently. It follows the MVVM architecture for maintainable and scalable code, integrates RESTful APIs for dynamic data, and includes a custom-built image loader for optimized performance. This project demonstrates a strong focus on user-centric design and clean coding practices.
+This iOS shopping app is designed to provide a seamless and intuitive shopping experience. Built with **Swift, SwiftUI, and Combine,** the app allows users to browse products, add items to wishlists and carts, and complete purchases efficiently. It follows the **MVVM architecture** for maintainable and scalable code, integrates **RESTful APIs** for dynamic data, and includes a custom-built image loader for optimized performance. This project demonstrates a strong focus on user-centric design and clean coding practices.
 ## Contributing
 We welcome any and all contributions! Here are some ways you can get started:
 1. Report bugs: If you encounter any bugs, please let us know. Open up an issue and let us know the problem.
