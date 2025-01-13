@@ -1,5 +1,5 @@
 # NewShopping-App
-### The project aims to develop a feature-rich iOS shopping app that enables users to browse products, manage wishlists and carts, and streamline the checkout process with a user-centric and scalable design.
+#### The project aims to develop a feature-rich iOS shopping app that enables users to browse products, manage wishlists and carts, and streamline the checkout process with a user-centric and scalable design.
 
 
 ## Description
