@@ -10,6 +10,7 @@ import Foundation
 class WishListManager:ObservableObject{
     static let shared = WishListManager()
     @Published var wishList:[Product] = []
+    var tempList:[Product] = []
     
     private init(){ }
     
