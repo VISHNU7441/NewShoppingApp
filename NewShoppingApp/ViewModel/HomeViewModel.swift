@@ -13,44 +13,43 @@ class HomeViewModel: ObservableObject{
     private var allProducts:[Product] = []
     @Published var listOfProducts:[Product] = []
     @Published var listOfSearchProducts:[Product] = []
+    @Published var isLoading = false
+    @Published var errorMessage: String?
     
     
     @Published var searchTerm:String = ""
     private var searchTask:Task<Void, Error>?
     
     let manager = CartManager.shared
+    private let productService = ProductService()
+
     // MARK: - function to fetchData from DataBase
     
+    @MainActor
     func fetchData() async {
+        isLoading = true
+        errorMessage = nil
         
-        guard let url = URL(string: "https://fakestoreapi.com/products") else {
-            print("invalid URL")
-            return
-        }
+        let result = await productService.fetchProducts()
         
-        do {
-            let (data, response) = try await URLSession.shared.data(from: url)
-            
-            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else { throw URLError.invalidResponse}
-            
-            let products = try JSONDecoder().decode([Product].self, from: data)
-            
-         //   downloadJSONToOffline(data: data, fileName: "fakeProducts")
-            
-            await MainActor.run {
-                self.allProducts = products
-                self.listOfProducts = allProducts
-            }
+        isLoading = false
+        switch result {
+        case .success(let products):
+            self.allProducts = products
+            self.listOfProducts = allProducts
             print("fetching successful")
-            
-        }
-        catch {
-            
-            if let urlError = error as? URLError{
-                print("error: \(urlError.rawValue)")
-            }else{
-                print(error.localizedDescription)
+        case .failure(let error):
+            switch error {
+            case .invalidURL:
+                self.errorMessage = "Invalid URL"
+            case .invalidResponse:
+                self.errorMessage = "Invalid response from the server"
+            case .decodingError:
+                self.errorMessage = "Failed to decode the data"
+            case .unknown(let underlyingError):
+                self.errorMessage = "An unknown error occurred: \(underlyingError.localizedDescription)"
             }
+            print("Error fetching data: \(errorMessage ?? "Unknown error")")
         }
     }
     
